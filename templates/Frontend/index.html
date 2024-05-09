@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            background: url('logo2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        .logo {
+            width: 100px;
+            /* Adjust size as needed */
+            height: auto;
+            margin-top: 10px;
+            /* Adjust margin as needed */
+        }
+
+        .post {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .post h3 {
+            color: white;
+        }
+
+        .post p {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main" >
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-space-evenly align-items-center">
+                <div class="col-md-2">
+                    <img src="logo.png" alt="Logo" class="logo">
+                </div>
+                <div class="col-md-8">
+                    <nav class="navbar navbar-light">
+                        <div class="container-fluid">
+                            <a class="navbar-brand text-white" href="#">Home</a>
+                            <a class="navbar-brand text-white" href="#">Find-University</a>
+                            <a class="navbar-brand text-white" href="#">Chat</a>
+                            <a class="navbar-brand text-white" href="#">About</a>
+                            <a class="navbar-brand text-white" href="#">Student-Profile</a>
+                            <a class="navbar-brand text-white" href="#">University-Profile</a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Account</button>
+                </div>
+            </div>
+            <div class="hero-section">
+                <div class="container">
+                    <div class="row">
+                        <img src="logo2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <div class="container d-flex flex-column">
+                                <div class="container" style="display: flex;justify-content: center;align-items: center;flex-direction:column;">
+                                    <div> <!-- mx-auto for centering the column horizontally -->
+                                        <div class="profile-pic">
+                                            <img src="https://via.placeholder.com/150" alt="profile picture" style="width: 100%; height: 100%; border-radius: 50%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name:</label>
+                                    <p class="text-white">Pankaj Kuswaha</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="college" class="form-label">College:</label>
+                                    <!-- Add College information here -->
+                                </div>
+                                <div class="mb-3">
+                                    <label for="futureUniversity" class="form-label">Future University:</label>
+                                    <!-- Add Future University information here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/40" alt="User Profile" class="rounded-circle me-2">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="mb-0">John Doe</h5>
+                                        <p class="text-muted mb-0 ms-2">Software Engineer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="d-flex flex-column">
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="postContent" placeholder="What's on your mind?" rows="3"></textarea>
+                                </div>
+                                <div class="ms-auto">
+                                    <button type="submit" class="btn btn-sm btn-light">
+                                        <i class="fas fa-share"></i> Post
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card bg-dark text-white mt-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/40" alt="User Profile" class="rounded-circle me-2">
+                                    <div>
+                                        <h5 class="mb-0">John Doe</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Content section -->
+                            <div class="mb-3">
+                                <p>This is the content of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <!-- Action buttons -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-light me-2">
+                                        <i class="fas fa-thumbs-up"></i> Like
+                                    </button>
+                                    <span class="text-white">10 Likes</span> <!-- Like count -->
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-light">
+                                        <i class="fas fa-share"></i> Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="col-md-3">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Contact</h5>
+                            <hr class="bg-light">
+                            <p>Email: Admin@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

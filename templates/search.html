@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .search-container {
+            margin-top: 50px;
+        }
+
+        .form-control {
+            background-color: rgb(255, 255, 255);
+            color: white;
+            border-color: white;
+        }
+
+        .btn-primary {
+            background-color: yellow;
+            border-color: yellow;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .btn-primary:focus {
+            background-color: yellow;
+            color: black;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div>
+                <a class="navbar-brand" href="#">{{university_name}}</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        {% if user.is_authenticated %}
+                        <div class="col-md-2">
+                            <div class="dropdown">
+                                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Account
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {% else %}
+                        <div class="col-md-2">
+                            <a type="button" class="btn btn-warning" href="{% url 'index' %}">Home</a>
+                        </div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="search-container">
+                    <h2 class="text-center mb-4">Search Universities</h2>
+                    <form action="{% url 'search' %}" method="get">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search universities" name="q">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if count != 0 %}
+    <style>
+        .search-results {
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+
+        .card-header {
+            background-color: black;
+            border-color: white;
+            color: yellow;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: yellow;
+            border-color: yellow;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .btn-primary:focus {
+            background-color: yellow;
+            color: black;
+            box-shadow: none;
+        }
+
+        .card-img-top {
+            border: 4px solid yellow;
+            border-radius: 50%;
+            width: 100px; /* Adjust the width */
+            height: 100px; /* Adjust the height */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="search-results">
+                    <h2 class="text-center mb-4">{{count}} Search Results</h2>
+                    {% for s in results %}
+                    <div class="card mt-2">
+                        <div class="row g-0">
+                            {% if s.image %}
+                            <div class="col-md-3">
+                                <img src="{{s.image.url}}" class="card-img" alt="University Image">
+                            </div>
+                            {% else %}
+                            <div class="col-md-3">
+                                <img src="https://via.placeholder.com/150" class="card-img" alt="University Image">
+                            </div>
+                            {% endif %}
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{s.name}}</h5>
+                                    <p class="card-text">{{s.description|truncatewords:20}}</p>
+                                    <a href="{% url 'university_detail_view' s.id %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Add more cards for additional search results -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

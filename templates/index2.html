@@ -1,0 +1,77 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="{% static 'logo.png' %}" alt="logo">
+        <nav class="navbar">
+            <ul class="nav_links">
+                <li><a href="index.html" class="link-underline-opacity-0">Home</a></li>
+                <li><a href="">Find-University</a></li>
+                <li><a href="">Chat</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">StudentProfile</a></li>
+                <li><a href="">UniversityProfile</a></li>
+            </ul>
+        </nav>
+        <a class="btn btn-pill" href="Register.html" data-bs-toggle="modal" data-bs-target="#registerModal">
+            <button>Account</button>
+        </a>
+
+        <!-- Register Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">Choose Your Role</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card p-2 text-center">
+                            <div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/130-man-student-2.svg/2048px-130-man-student-2.svg.png"
+                                    alt="Student Photo" class="img-thumbnail" style="width: 100px;">
+                            </div>
+                            <h5 class="card-title">Register as Student</h5>
+                            <p class="card-text">Choose this option if you are a student.</p>
+                            <button type="button" class="btn btn-warning">
+                                <a href="{% url 'registerStudent' %}" class="text-decoration-none" style="color: black;">Signup</a>
+                            </button>
+                        </div>
+
+                        <div class="card p-2 text-center">
+                            <div>
+                                <img src="https://www.svgrepo.com/show/115448/school.svg" alt="Student Photo"
+                                    class="img-thumbnail" style="width: 100px;">
+                            </div>
+                            <h5 class="card-title">Register as University</h5>
+                            <p class="card-text">Choose this option if you are a University.</p>
+                            <button type="button" class="btn btn-warning">
+                                <a href="{% url 'registerUniversity' %}" class="text-decoration-none" style="color: black;">Signup</a>
+                            </button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="{% url 'login' %}" class="btn btn-dark">Already have an account? Login</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

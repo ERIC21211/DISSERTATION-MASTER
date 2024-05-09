@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half Page Video and Account Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            border-bottom: 1px solid white; /* Add a white border bottom */
+        }
+        .navbar-brand img {
+            height: 150px; /* Adjust height as needed */
+            width: auto;
+        }
+        .navbar-brand {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .yellow-button {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="logo.png" alt="Logo">
+        </a>
+        <!-- Navbar content here -->
+        <hr>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- YouTube Video -->
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Z19El7Zt4zc?si=JpLzQbwdMfJu4um0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Create Account Section -->
+            <div class="text-center">
+                <h1>Create an Account</h1>
+                <p>Get access to exclusive content!</p>
+                <button type="button" class="btn btn-lg yellow-button">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
