@@ -22,12 +22,12 @@ Welcome to the University Discovery Web Application! This platform serves as a h
 ### Local Deployment
 1. Clone this repository to your local machine.
    ```
-   git clone https://github.com/your-username/university-discovery.git
+   git clone https://github.com/ERIC21211/UNIVERSITY-HUB-master.git
    ```
 
 2. Navigate to the project directory.
    ```
-   cd university-discovery
+   cd UNIVERSITY-HUB-master
    ```
 
 3. Create and activate a virtual environment (optional).
